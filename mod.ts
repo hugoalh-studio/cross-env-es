@@ -38,7 +38,7 @@ export function getEnv(key: string): string | undefined {
 	return process.env[key];
 }
 /**
- * Check whether an environment variable is present or not.
+ * Check whether an environment variable is present.
  * @param {string} key
  * @returns {boolean}
  */
@@ -49,7 +49,7 @@ export function hasEnv(key: string): boolean {
 	return (typeof process.env[key] !== "undefined");
 }
 /**
- * Set the value of an environment variable.
+ * Set an environment variable.
  * @param {string} key
  * @param {string} value
  * @returns {void}
