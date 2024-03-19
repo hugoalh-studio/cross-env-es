@@ -99,6 +99,15 @@ A TypeScript module for cross runtime environment variables interface.
 ## 🧩 API
 
 - ```ts
+  class CrossEnv {
+    static delete(key: string): void;
+    static get(key: string): string | undefined;
+    static getAll(): { [key: string]: string; };
+    static has(key: string): boolean;
+    static set(key: string, value: string): void;
+  }
+  ```
+- ```ts
   function deleteEnv(key: string): void;
   ```
 - ```ts

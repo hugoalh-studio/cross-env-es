@@ -1,5 +1,72 @@
 import process from "node:process";
 /**
+ * Cross runtime environment variables interface.
+ */
+export class CrossEnv {
+	/**
+	 * Delete an environment variable.
+	 * @param {string} key
+	 * @returns {void}
+	 */
+	static delete(key: string): void {
+		if (typeof Deno !== "undefined") {
+			return Deno.env.delete(key);
+		}
+		process.env[key] = undefined;
+	}
+	/**
+	 * Get the value of an environment variable.
+	 * @param {string} key
+	 * @returns {string | undefined}
+	 */
+	static get(key: string): string | undefined {
+		if (typeof Deno !== "undefined") {
+			return Deno.env.get(key);
+		}
+		return process.env[key];
+	}
+	/**
+	 * Get a snapshot of the environment variables at invocation as a simple object of keys and values.
+	 * @returns {{ [key: string]: string; }}
+	 */
+	static getAll(): { [key: string]: string; } {
+		if (typeof Deno !== "undefined") {
+			return Deno.env.toObject();
+		}
+		const result: { [key: string]: string; } = {};
+		for (const [key, value] of Object.entries(process.env)) {
+			if (typeof value !== "undefined") {
+				result[key] = value;
+			}
+		}
+		return result;
+	}
+	/**
+	 * Check whether an environment variable is present.
+	 * @param {string} key
+	 * @returns {boolean}
+	 */
+	static has(key: string): boolean {
+		if (typeof Deno !== "undefined") {
+			return Deno.env.has(key);
+		}
+		return (typeof process.env[key] !== "undefined");
+	}
+	/**
+	 * Set an environment variable.
+	 * @param {string} key
+	 * @param {string} value
+	 * @returns {void}
+	 */
+	static set(key: string, value: string): void {
+		if (typeof Deno !== "undefined") {
+			return Deno.env.set(key, value);
+		}
+		process.env[key] = value;
+	}
+}
+export default CrossEnv;
+/**
  * Delete an environment variable.
  * 
  * > **🛡️ Require Permission**
@@ -9,10 +76,7 @@ import process from "node:process";
  * @returns {void}
  */
 export function deleteEnv(key: string): void {
-	if (typeof Deno !== "undefined") {
-		return Deno.env.delete(key);
-	}
-	process.env[key] = undefined;
+	return CrossEnv.delete(key);
 }
 /**
  * Get a snapshot of the environment variables at invocation as a simple object of keys and values.
@@ -23,16 +87,7 @@ export function deleteEnv(key: string): void {
  * @returns {{ [key: string]: string; }} Snapshot of the environment variables.
  */
 export function getAllEnv(): { [key: string]: string; } {
-	if (typeof Deno !== "undefined") {
-		return Deno.env.toObject();
-	}
-	const result: { [key: string]: string; } = {};
-	for (const [key, value] of Object.entries(process.env)) {
-		if (typeof value !== "undefined") {
-			result[key] = value;
-		}
-	}
-	return result;
+	return CrossEnv.getAll();
 }
 /**
  * Get the value of an environment variable.
@@ -44,10 +99,7 @@ export function getAllEnv(): { [key: string]: string; } {
  * @returns {string | undefined} Value of the environment variable.
  */
 export function getEnv(key: string): string | undefined {
-	if (typeof Deno !== "undefined") {
-		return Deno.env.get(key);
-	}
-	return process.env[key];
+	return CrossEnv.get(key);
 }
 /**
  * Check whether an environment variable is present.
@@ -59,10 +111,7 @@ export function getEnv(key: string): string | undefined {
  * @returns {boolean} Determine result.
  */
 export function hasEnv(key: string): boolean {
-	if (typeof Deno !== "undefined") {
-		return Deno.env.has(key);
-	}
-	return (typeof process.env[key] !== "undefined");
+	return CrossEnv.has(key);
 }
 /**
  * Set an environment variable.
@@ -75,8 +124,5 @@ export function hasEnv(key: string): boolean {
  * @returns {void}
  */
 export function setEnv(key: string, value: string): void {
-	if (typeof Deno !== "undefined") {
-		return Deno.env.set(key, value);
-	}
-	process.env[key] = value;
+	return CrossEnv.set(key, value);
 }
