@@ -1,7 +1,11 @@
 import process from "node:process";
 /**
  * Delete an environment variable.
- * @param {string} key
+ * 
+ * > **🛡️ Require Permission**
+ * >
+ * > - Environment Variable (`allow-env`)
+ * @param {string} key Key of the environment variable.
  * @returns {void}
  */
 export function deleteEnv(key: string): void {
@@ -12,7 +16,11 @@ export function deleteEnv(key: string): void {
 }
 /**
  * Get a snapshot of the environment variables at invocation as a simple object of keys and values.
- * @returns {{ [key: string]: string; }}
+ * 
+ * > **🛡️ Require Permission**
+ * >
+ * > - Environment Variable (`allow-env`)
+ * @returns {{ [key: string]: string; }} Snapshot of the environment variables.
  */
 export function getAllEnv(): { [key: string]: string; } {
 	if (typeof Deno !== "undefined") {
@@ -28,8 +36,12 @@ export function getAllEnv(): { [key: string]: string; } {
 }
 /**
  * Get the value of an environment variable.
- * @param {string} key
- * @returns {string | undefined}
+ * 
+ * > **🛡️ Require Permission**
+ * >
+ * > - Environment Variable (`allow-env`)
+ * @param {string} key Key of the environment variable.
+ * @returns {string | undefined} Value of the environment variable.
  */
 export function getEnv(key: string): string | undefined {
 	if (typeof Deno !== "undefined") {
@@ -39,8 +51,12 @@ export function getEnv(key: string): string | undefined {
 }
 /**
  * Check whether an environment variable is present.
- * @param {string} key
- * @returns {boolean}
+ * 
+ * > **🛡️ Require Permission**
+ * >
+ * > - Environment Variable (`allow-env`)
+ * @param {string} key Key of the environment variable.
+ * @returns {boolean} Determine result.
  */
 export function hasEnv(key: string): boolean {
 	if (typeof Deno !== "undefined") {
@@ -50,8 +66,12 @@ export function hasEnv(key: string): boolean {
 }
 /**
  * Set an environment variable.
- * @param {string} key
- * @param {string} value
+ * 
+ * > **🛡️ Require Permission**
+ * >
+ * > - Environment Variable (`allow-env`)
+ * @param {string} key Key of the environment variable.
+ * @param {string} value Value of the environment variable.
  * @returns {void}
  */
 export function setEnv(key: string, value: string): void {
