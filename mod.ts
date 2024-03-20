@@ -1,4 +1,6 @@
-import process from "node:process";
+declare const process: {
+	env: { [key: string]: string | undefined; };
+};
 /**
  * Delete an environment variable.
  * 
