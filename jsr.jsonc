@@ -3,6 +3,18 @@
 	"name": "@hugoalh/cross-env",
 	"version": "1.0.1",
 	"exports": {
+		"./env": "./env.ts",
+		"./is-ci": "./is_ci.ts",
+		"./is-docker": "./is_docker.ts",
+		"./is-heroku": "./is_heroku.ts",
+		"./is-hyper": "./is_hyper.ts",
+		"./is-podman": "./is_podman.ts",
+		"./is-root": "./is_root.ts",
+		"./is-ssh": "./is_ssh.ts",
+		"./is-travis": "./is_travis.ts",
+		"./is-wsl": "./is_wsl.ts",
+		"./path": "./path.ts",
+		"./pathext": "./pathext.ts",
 		".": "./mod.ts"
 	},
 	"imports": { },
