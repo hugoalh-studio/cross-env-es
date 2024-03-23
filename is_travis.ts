@@ -6,8 +6,6 @@ import { isEnvironmentCI } from "./is_ci.ts";
  * > **🛡️ Require Permission**
  * >
  * > - Environment Variable (`allow-env`)
- * >   - `CI`
- * >   - `TRAVIS`
  * @returns {boolean} Determine result.
  */
 export function isEnvironmentTravis(): boolean {
