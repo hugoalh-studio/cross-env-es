@@ -8,5 +8,5 @@ export { isEnvironmentRoot } from "./is_root.ts";
 export { isEnvironmentSSH } from "./is_ssh.ts";
 export { isEnvironmentTravis } from "./is_travis.ts";
 export { isEnvironmentWSL, isEnvironmentWSLSync } from "./is_wsl.ts";
-export { addPATH, getPATH } from "./path.ts";
-export { getPATHEXT } from "./pathext.ts";
+export { envPath, type CrossEnvPath } from "./path.ts";
+export { envPathExt, type CrossEnvPathExt } from "./pathext.ts";

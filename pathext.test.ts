@@ -1,8 +1,8 @@
-import { getPATHEXT } from "./pathext.ts";
+import envPathExt from "./pathext.ts";
 Deno.test("Get", {
 	permissions: {
 		env: ["PATHEXT"]
 	}
 }, () => {
-	console.log(getPATHEXT());
+	console.log(envPathExt.get());
 });

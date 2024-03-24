@@ -1,53 +1,47 @@
 import { delimiter as pathDelimiter } from "node:path";
 import env from "./env.ts";
 /**
- * Join the environment variable value with inter handle of the operate system specific delimiter.
- * @access private
- * @param {Set<string>} item
- * @returns {string}
- */
-function joinEnvDelimitation(item: Set<string>): string {
-	return Array.from<string>(item.values()).join(pathDelimiter);
-}
-/**
- * Split the environment variable value with inter handle of the operate system specific delimiter.
- * @access private
- * @param {string} item
- * @returns {Set<string>}
- */
-function splitEnvDelimitation(item: string): Set<string> {
-	return new Set<string>(item.split(pathDelimiter).map<string>((value: string): string => {
-		return value.trim();
-	}).filter((value: string): boolean => {
-		return (value.length > 0);
-	}));
-}
-/**
- * Add value to an environment variable with inter handle of the operate system specific delimiter.
+ * Cross runtime environment variables delimitation interface.
  * 
  * > **🛡️ Require Permission**
  * >
  * > - Environment Variable (`allow-env`)
- * @param {string} key Key of the environment variable.
- * @param {...string} values
- * @returns {void}
  */
-export function addEnvDelimitation(key: string, ...values: string[]): void {
-	const targetValues: Set<string> = splitEnvDelimitation(env.get(key) ?? "");
-	for (const value of values) {
-		targetValues.add(value);
+export interface CrossEnvDelimitation {
+	/**
+	 * Get the value of an environment variable with inter-handle delimiter.
+	 * 
+	 * > **🛡️ Require Permission**
+	 * >
+	 * > - Environment Variable (`allow-env`)
+	 * @param {string} key Key of the environment variable.
+	 * @returns {Set<string>} Values of the environment variable.
+	 */
+	get(key: string): Set<string>;
+	/**
+	 * Set an environment variable with inter-handle delimiter.
+	 * 
+	 * > **🛡️ Require Permission**
+	 * >
+	 * > - Environment Variable (`allow-env`)
+	 * @param {string} key Key of the environment variable.
+	 * @param {Set<string>} values Values of the environment variable.
+	 * @returns {void}
+	 */
+	set(key: string, values: Set<string>): void;
+}
+/**
+ * Cross runtime environment variables delimitation interface.
+ * 
+ * > **🛡️ Require Permission**
+ * >
+ * > - Environment Variable (`allow-env`)
+ */
+export const envDelimitation: CrossEnvDelimitation = Object.freeze({
+	get(key: string): Set<string> {
+		return new Set<string>((env.get(key) ?? "").split(pathDelimiter));
+	},
+	set(key: string, values: Set<string>): void {
+		return env.set(key, Array.from<string>(values.values()).join(pathDelimiter));
 	}
-	env.set(key, joinEnvDelimitation(targetValues));
-}
-/**
- * Get the value of an environment variable with inter handle of the operate system specific delimiter.
- * 
- * > **🛡️ Require Permission**
- * >
- * > - Environment Variable (`allow-env`)
- * @param {string} key Key of the environment variable.
- * @returns {string[]} Values of the environment variable.
- */
-export function getEnvDelimitation(key: string): string[] {
-	return Array.from<string>(splitEnvDelimitation(env.get(key) ?? "").values());
-}
+});

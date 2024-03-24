@@ -58,20 +58,20 @@ export interface CrossEnv {
 	 */
 	set(key: string, value: string): void;
 }
-class CrossEnvDeno implements CrossEnv {
-	delete = Deno.env.delete;
-	get = Deno.env.get;
-	getAll = Deno.env.toObject;
-	has = Deno.env.has;
-	set = Deno.env.set;
-}
-class CrossEnvProcess implements CrossEnv {
+const envViaDeno: CrossEnv = {
+	delete: Deno.env.delete,
+	get: Deno.env.get,
+	getAll: Deno.env.toObject,
+	has: Deno.env.has,
+	set: Deno.env.set
+};
+const envViaProcess: CrossEnv = {
 	delete(key: string): void {
 		process.env[key] = undefined;
-	}
+	},
 	get(key: string): string | undefined {
 		return process.env[key];
-	}
+	},
 	getAll(): { [key: string]: string; } {
 		const result: { [key: string]: string; } = {};
 		for (const [key, value] of Object.entries(process.env)) {
@@ -80,14 +80,14 @@ class CrossEnvProcess implements CrossEnv {
 			}
 		}
 		return result;
-	}
+	},
 	has(key: string): boolean {
 		return (typeof process.env[key] !== "undefined");
-	}
+	},
 	set(key: string, value: string): void {
 		process.env[key] = value;
 	}
-}
+};
 /**
  * Cross runtime environment variables interface.
  * 
@@ -95,7 +95,7 @@ class CrossEnvProcess implements CrossEnv {
  * >
  * > - Environment Variable (`allow-env`)
  */
-export const env: CrossEnv = (typeof Deno === "undefined") ? new CrossEnvProcess() : new CrossEnvDeno();
+export const env: CrossEnv = Object.freeze((typeof Deno === "undefined") ? envViaProcess : envViaDeno);
 export default env;
 /**
  * Delete an environment variable.

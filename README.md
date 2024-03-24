@@ -102,6 +102,12 @@ A TypeScript module for cross runtime environment variables interface.
   const env: CrossEnv;
   ```
 - ```ts
+  const envPath: CrossEnvPath;
+  ```
+- ```ts
+  const envPathExt: CrossEnvPathExt;
+  ```
+- ```ts
   function isEnvironmentCI(): boolean;
   ```
 - ```ts
@@ -135,6 +141,20 @@ A TypeScript module for cross runtime environment variables interface.
     getAll(): { [key: string]: string; };
     has(key: string): boolean;
     set(key: string, value: string): void;
+  }
+  ```
+- ```ts
+  interface CrossEnvPath {
+    add(...values: string[]): void;
+    delete(...values: string[]): void;
+    get(): string[];
+  }
+  ```
+- ```ts
+  interface CrossEnvPathExt {
+    add(...values: string[]): void;
+    delete(...values: string[]): void;
+    get(): string[] | null;
   }
   ```
 

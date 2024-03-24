@@ -1,8 +1,8 @@
-import { getPATH } from "./path.ts";
+import envPath from "./path.ts";
 Deno.test("Get", {
 	permissions: {
 		env: ["PATH"]
 	}
 }, () => {
-	console.log(getPATH());
+	console.log(envPath.get());
 });
