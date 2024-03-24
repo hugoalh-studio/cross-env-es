@@ -99,19 +99,43 @@ A TypeScript module for cross runtime environment variables interface.
 ## 🧩 API
 
 - ```ts
-  function deleteEnv(key: string): void;
+  const env: CrossEnv;
   ```
 - ```ts
-  function getAllEnv(): { [key: string]: string; };
+  function isEnvironmentCI(): boolean;
   ```
 - ```ts
-  function getEnv(key: string): string | undefined;
+  function isEnvironmentDocker(): Promise<boolean>;
   ```
 - ```ts
-  function hasEnv(key: string): boolean;
+  function isEnvironmentHeroku(): boolean;
   ```
 - ```ts
-  function setEnv(key: string, value: string): void;
+  function isEnvironmentHyper(): boolean;
+  ```
+- ```ts
+  function isEnvironmentPodman(): Promise<boolean>;
+  ```
+- ```ts
+  function isEnvironmentRoot(): boolean;
+  ```
+- ```ts
+  function isEnvironmentSSH(): boolean;
+  ```
+- ```ts
+  function isEnvironmentTravis(): boolean;
+  ```
+- ```ts
+  function isEnvironmentWSL(): Promise<boolean>;
+  ```
+- ```ts
+  interface CrossEnv {
+    delete(key: string): void;
+    get(key: string): string | undefined;
+    getAll(): { [key: string]: string; };
+    has(key: string): boolean;
+    set(key: string, value: string): void;
+  }
   ```
 
 > **ℹ️ Note**
@@ -124,13 +148,13 @@ A TypeScript module for cross runtime environment variables interface.
 ## ✍️ Example
 
 - ```ts
-  deleteEnv("SOME_VAR");
+  env.delete("SOME_VAR");
   ```
 - ```ts
-  getEnv("HOME");
+  env.get("HOME");
   //=> "/home/alice"
   ```
 - ```ts
-  getEnv("SOME_VAR");
+  env.get("SOME_VAR");
   //=> undefined
   ```

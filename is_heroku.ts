@@ -1,4 +1,4 @@
-import { getEnv, hasEnv } from "./env.ts";
+import env from "./env.ts";
 /**
  * Determine whether this process is inside Heroku.
  * 
@@ -12,8 +12,8 @@ import { getEnv, hasEnv } from "./env.ts";
  */
 export function isEnvironmentHeroku(): boolean {
 	return (
-		hasEnv("HEROKU") ||
-		(hasEnv("DYNO") && getEnv("HOME") === "/app")
+		env.has("HEROKU") ||
+		(env.has("DYNO") && env.get("HOME") === "/app")
 	);
 }
 export default isEnvironmentHeroku;

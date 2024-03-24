@@ -1,4 +1,4 @@
-import { getEnv } from "./env.ts";
+import env from "./env.ts";
 /**
  * Determine whether this process is inside [Hyper](https://hyper.is).
  * 
@@ -9,7 +9,7 @@ import { getEnv } from "./env.ts";
  * @returns {boolean} Determine result.
  */
 export function isEnvironmentHyper(): boolean {
-	const value: string | undefined = getEnv("TERM_PROGRAM");
+	const value: string | undefined = env.get("TERM_PROGRAM");
 	return (
 		value === "Hyper" ||
 		value === "HyperTerm"

@@ -1,5 +1,5 @@
 import { delimiter as pathDelimiter } from "node:path";
-import { getEnv, setEnv } from "./env.ts";
+import env from "./env.ts";
 /**
  * Join the environment variable value with inter handle of the operate system specific delimiter.
  * @access private
@@ -33,11 +33,11 @@ function splitEnvDelimitation(item: string): Set<string> {
  * @returns {void}
  */
 export function addEnvDelimitation(key: string, ...values: string[]): void {
-	const targetValues: Set<string> = splitEnvDelimitation(getEnv(key) ?? "");
+	const targetValues: Set<string> = splitEnvDelimitation(env.get(key) ?? "");
 	for (const value of values) {
 		targetValues.add(value);
 	}
-	setEnv(key, joinEnvDelimitation(targetValues));
+	env.set(key, joinEnvDelimitation(targetValues));
 }
 /**
  * Get the value of an environment variable with inter handle of the operate system specific delimiter.
@@ -49,5 +49,5 @@ export function addEnvDelimitation(key: string, ...values: string[]): void {
  * @returns {string[]} Values of the environment variable.
  */
 export function getEnvDelimitation(key: string): string[] {
-	return Array.from<string>(splitEnvDelimitation(getEnv(key) ?? "").values());
+	return Array.from<string>(splitEnvDelimitation(env.get(key) ?? "").values());
 }

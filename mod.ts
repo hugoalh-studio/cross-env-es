@@ -1,4 +1,4 @@
-export { deleteEnv, deleteEnvironmentVariable, getAllEnv, getAllEnvironmentVariable, getEnv, getEnvironmentVariable, hasEnv, hasEnvironmentVariable, setEnv, setEnvironmentVariable } from "./env.ts";
+export { deleteEnv, env, getAllEnv, getEnv, hasEnv, setEnv, type CrossEnv } from "./env.ts";
 export { isEnvironmentCI } from "./is_ci.ts";
 export { isEnvironmentDocker, isEnvironmentDockerSync } from "./is_docker.ts";
 export { isEnvironmentHeroku } from "./is_heroku.ts";

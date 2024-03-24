@@ -1,4 +1,4 @@
-import { hasEnv } from "./env.ts";
+import env from "./env.ts";
 import { isEnvironmentCI } from "./is_ci.ts";
 /**
  * Determine whether this process is inside Travis.
@@ -9,6 +9,6 @@ import { isEnvironmentCI } from "./is_ci.ts";
  * @returns {boolean} Determine result.
  */
 export function isEnvironmentTravis(): boolean {
-	return (isEnvironmentCI() && hasEnv("TRAVIS"));
+	return (isEnvironmentCI() && env.has("TRAVIS"));
 }
 export default isEnvironmentTravis;

@@ -1,9 +1,7 @@
 import { isEnvironmentRoot } from "./is_root.ts";
 Deno.test("Main", {
 	permissions: {
-		sys: [
-			"uid"
-		]
+		sys: ["uid"]
 	}
 }, () => {
 	console.log(isEnvironmentRoot());

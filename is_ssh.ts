@@ -1,4 +1,4 @@
-import { hasEnv } from "./env.ts";
+import env from "./env.ts";
 /**
  * Determine whether this process is inside SSH.
  * 
@@ -9,6 +9,6 @@ import { hasEnv } from "./env.ts";
  * @returns {boolean} Determine result.
  */
 export function isEnvironmentSSH(): boolean {
-	return hasEnv("SSH_CLIENT");
+	return env.has("SSH_CLIENT");
 }
 export default isEnvironmentSSH;

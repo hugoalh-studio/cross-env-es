@@ -1,8 +1,8 @@
-import { getAllEnv } from "./env.ts";
-Deno.test("All", {
+import env from "./env.ts";
+Deno.test("Get All", {
 	permissions: {
 		env: true
 	}
 }, () => {
-	console.log(getAllEnv());
+	console.log(env.getAll());
 });
