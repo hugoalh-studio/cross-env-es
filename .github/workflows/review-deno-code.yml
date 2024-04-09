@@ -17,22 +17,24 @@ on:
   workflow_dispatch:
 jobs:
   main:
-    name: "${{matrix.runon}}"
+    name: "${{matrix.run_on}}"
     permissions:
       contents: "read"
     strategy:
       matrix:
-        runon:
+        run_on:
           - "ubuntu-latest"
-        issub:
+        run_sub:
           - false
         include:
-          - runon: "macos-latest"
-            issub: true
-          - runon: "windows-latest"
-            issub: true
+          - run_on: "macos-latest"
+            run_sub: true
+          - run_on: "windows-latest"
+            run_sub: true
       fail-fast: false
-    uses: "hugoalh/hugoalh/.github/workflows/call-review-deno-code-1.yml@main"
+    uses: "hugoalh/hugoalh/.github/workflows/call-review-deno-code-2.yml@main"
     with:
-      runon: "${{matrix.runon}}"
-      issub: "${{matrix.issub}}"
+      run_on: "${{matrix.run_on}}"
+      run_sub: "${{matrix.run_sub}}"
+      deployment_jsr: true
+      deployment_npm: true

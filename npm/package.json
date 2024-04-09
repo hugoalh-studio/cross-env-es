@@ -1,0 +1,99 @@
+{
+	"name": "@hugoalh/cross-env",
+	"version": "1.1.0",
+	"description": "A module for cross runtime environment variables interface.",
+	"keywords": [
+		"cross",
+		"env",
+		"environment-variables"
+	],
+	"homepage": "https://github.com/hugoalh-studio/cross-env-es#readme",
+	"bugs": {
+		"url": "https://github.com/hugoalh-studio/cross-env-es/issues"
+	},
+	"license": "MIT",
+	"author": "hugoalh",
+	"files": [
+		"asset/**",
+		"bin/**",
+		"dist/**",
+		"lib/**",
+		"LICENSE*.md",
+		"package.json",
+		"README*.md"
+	],
+	"type": "module",
+	"main": "./dist/mod.js",
+	"exports": {
+		"./env": {
+			"types": "./dist/env.d.ts",
+			"import": "./dist/env.js"
+		},
+		"./is-ci": {
+			"types": "./dist/is_ci.d.ts",
+			"import": "./dist/is_ci.js"
+		},
+		"./is-docker": {
+			"types": "./dist/is_docker.d.ts",
+			"import": "./dist/is_docker.js"
+		},
+		"./is-heroku": {
+			"types": "./dist/is_heroku.d.ts",
+			"import": "./dist/is_heroku.js"
+		},
+		"./is-hyper": {
+			"types": "./dist/is_hyper.d.ts",
+			"import": "./dist/is_hyper.js"
+		},
+		"./is-podman": {
+			"types": "./dist/is_podman.d.ts",
+			"import": "./dist/is_podman.js"
+		},
+		"./is-root": {
+			"types": "./dist/is_root.d.ts",
+			"import": "./dist/is_root.js"
+		},
+		"./is-ssh": {
+			"types": "./dist/is_ssh.d.ts",
+			"import": "./dist/is_ssh.js"
+		},
+		"./is-travis": {
+			"types": "./dist/is_travis.d.ts",
+			"import": "./dist/is_travis.js"
+		},
+		"./is-wsl": {
+			"types": "./dist/is_wsl.d.ts",
+			"import": "./dist/is_wsl.js"
+		},
+		"./path": {
+			"types": "./dist/path.d.ts",
+			"import": "./dist/path.js"
+		},
+		"./pathext": {
+			"types": "./dist/pathext.d.ts",
+			"import": "./dist/pathext.js"
+		},
+		".": {
+			"types": "./dist/mod.d.ts",
+			"import": "./dist/mod.js"
+		}
+	},
+	"types": "./dist/mod.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hugoalh-studio/cross-env-es.git"
+	},
+	"scripts": {
+		"build": "tsc"
+	},
+	"devDependencies": {
+		"typescript": "^5.4.3"
+	},
+	"engines": {
+		"node": ">=16.13.0"
+	},
+	"private": false,
+	"publishConfig": {
+		"access": "public"
+	}
+}

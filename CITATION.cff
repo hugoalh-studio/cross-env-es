@@ -1,14 +1,19 @@
 # yaml-language-server: $schema=https://citation-file-format.github.io/1.2.0/schema.json
 cff-version: "1.2.0"
-title: "Cross Env (TypeScript)"
+title: "Cross Env (ES)"
 message: "If you use this software, please cite it using the metadata from this file."
 type: "software"
 authors:
   - name: "hugoalh Studio"
-repository-code: "https://github.com/hugoalh-studio/cross-env-ts"
+repository-code: "https://github.com/hugoalh-studio/cross-env-es"
 keywords:
   - "cross"
   - "env"
+  - "environment-variables"
+  - "es"
+  - "javascript"
+  - "js"
+  - "modulejs"
   - "ts"
   - "typescript"
 license: "MIT"
