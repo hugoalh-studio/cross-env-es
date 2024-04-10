@@ -73,13 +73,9 @@ const envViaProcess: CrossEnv = {
 		return process.env[key];
 	},
 	getAll(): { [key: string]: string; } {
-		const result: { [key: string]: string; } = {};
-		for (const [key, value] of Object.entries(process.env)) {
-			if (typeof value !== "undefined") {
-				result[key] = value;
-			}
-		}
-		return result;
+		return Object.fromEntries(Object.entries(process.env).filter(([_key, value]: [string, string | undefined]): boolean => {
+			return (typeof value !== "undefined");
+		}) as [string, string][]);
 	},
 	has(key: string): boolean {
 		return (typeof process.env[key] !== "undefined");

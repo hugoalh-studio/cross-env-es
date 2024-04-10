@@ -86,7 +86,7 @@ export const envPathExt: CrossEnvPathExt = Object.freeze({
 		}
 		const values: Set<string> = envDelimitation.get("PATHEXT");
 		if (values.size > 0) {
-			return Array.from<string>(values.values());
+			return Array.from(values.values());
 		}
 		return [".EXE", ".CMD", ".BAT", ".COM"];
 	}

@@ -42,6 +42,6 @@ export const envDelimitation: CrossEnvDelimitation = Object.freeze({
 		return new Set<string>((env.get(key) ?? "").split(pathDelimiter));
 	},
 	set(key: string, values: Set<string>): void {
-		return env.set(key, Array.from<string>(values.values()).join(pathDelimiter));
+		return env.set(key, Array.from(values.values()).join(pathDelimiter));
 	}
 });

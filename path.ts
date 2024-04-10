@@ -80,7 +80,7 @@ export const envPath: CrossEnvPath = Object.freeze({
 		}
 	},
 	get(): string[] {
-		return Array.from<string>(envDelimitation.get("PATH").values());
+		return Array.from(envDelimitation.get("PATH").values());
 	}
 });
 export default envPath;
