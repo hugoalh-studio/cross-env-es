@@ -15,7 +15,7 @@ An ES (JavaScript & TypeScript) module for cross runtime environment variables i
 - Deno >= v1.34.0 / >= v1.41.1 (For JSR Only)
   > **🛡️ Require Permission**
   >
-  > *N/A*
+  > - Environment Variable (`allow-env`)
 - NodeJS >= v16.13.0
 
 ## 🔰 Usage
