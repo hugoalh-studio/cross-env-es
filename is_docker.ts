@@ -4,11 +4,12 @@ const regexpWordDocker = /docker/i;
 /**
  * Determine whether this process is inside Docker.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - File System - Read (`allow-read`)
- * >   - `/.dockerenv`
- * >   - `/proc/self/cgroup`
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | File System - Read (`allow-read`) | `/.dockerenv` |
+ * > | Deno | File System - Read (`allow-read`) | `/proc/self/cgroup` |
  * @returns {Promise<boolean>} Determine result.
  */
 export async function isEnvironmentDocker(): Promise<boolean> {
@@ -28,11 +29,12 @@ export default isEnvironmentDocker;
 /**
  * Determine whether this process is inside Docker.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - File System - Read (`allow-read`)
- * >   - `/.dockerenv`
- * >   - `/proc/self/cgroup`
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | File System - Read (`allow-read`) | `/.dockerenv` |
+ * > | Deno | File System - Read (`allow-read`) | `/proc/self/cgroup` |
  * @returns {boolean} Determine result.
  */
 export function isEnvironmentDockerSync(): boolean {

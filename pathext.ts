@@ -4,19 +4,21 @@ const isOSWindows: boolean = process.platform === "win32";
 /**
  * Cross runtime environment variables `PATHEXT` interface.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
- * >   - `PATHEXT` *(For Windows Only)*
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | `PATHEXT` (For Windows Only) |
  */
 export interface CrossEnvPathExt {
 	/**
 	 * Add value to the environment variable `PATHEXT`.
 	 * 
-	 * > **🛡️ Require Permission**
+	 * > **🛡️ Permissions**
 	 * >
-	 * > - Environment Variable (`allow-env`)
-	 * >   - `PATHEXT` *(For Windows Only)*
+	 * > | **Target** | **Type** | **Coverage** |
+	 * > |:--|:--|:--|
+	 * > | Deno | Environment Variable (`allow-env`) | `PATHEXT` (For Windows Only) |
 	 * @param {...string} values Value that need to add to the environment variable `PATHEXT`.
 	 * @returns {void}
 	 */
@@ -24,10 +26,11 @@ export interface CrossEnvPathExt {
 	/**
 	 * Delete value from the environment variable `PATHEXT`.
 	 * 
-	 * > **🛡️ Require Permission**
+	 * > **🛡️ Permissions**
 	 * >
-	 * > - Environment Variable (`allow-env`)
-	 * >   - `PATHEXT` *(For Windows Only)*
+	 * > | **Target** | **Type** | **Coverage** |
+	 * > |:--|:--|:--|
+	 * > | Deno | Environment Variable (`allow-env`) | `PATHEXT` (For Windows Only) |
 	 * @param {...string} values Value that need to delete from the environment variable `PATHEXT`.
 	 * @returns {void}
 	 */
@@ -35,10 +38,11 @@ export interface CrossEnvPathExt {
 	/**
 	 * Get the values of the environment variable `PATHEXT`; Always return `null` for non-Windows operate system.
 	 * 
-	 * > **🛡️ Require Permission**
+	 * > **🛡️ Permissions**
 	 * >
-	 * > - Environment Variable (`allow-env`)
-	 * >   - `PATHEXT` *(For Windows Only)*
+	 * > | **Target** | **Type** | **Coverage** |
+	 * > |:--|:--|:--|
+	 * > | Deno | Environment Variable (`allow-env`) | `PATHEXT` (For Windows Only) |
 	 * @returns {string[] | null} Values of the environment variable `PATHEXT`.
 	 */
 	get(): string[] | null;
@@ -46,10 +50,11 @@ export interface CrossEnvPathExt {
 /**
  * Cross runtime environment variables `PATHEXT` interface.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
- * >   - `PATHEXT` *(For Windows Only)*
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | `PATHEXT` (For Windows Only) |
  */
 export const envPathExt: CrossEnvPathExt = Object.freeze({
 	add(...values: string[]): void {

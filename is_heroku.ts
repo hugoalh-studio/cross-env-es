@@ -2,12 +2,13 @@ import env from "./env.ts";
 /**
  * Determine whether this process is inside Heroku.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
- * >   - `DYNO`
- * >   - `HEROKU`
- * >   - `HOME`
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | `DYNO` |
+ * > | Deno | Environment Variable (`allow-env`) | `HEROKU` |
+ * > | Deno | Environment Variable (`allow-env`) | `HOME` |
  * @returns {boolean} Determine result.
  */
 export function isEnvironmentHeroku(): boolean {

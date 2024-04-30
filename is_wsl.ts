@@ -5,10 +5,11 @@ const regexpWordMicrosoft = /microsoft/i;
 /**
  * Determine whether this process is inside WSL (Windows Subsystem for Linux).
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - File System - Read (`allow-read`)
- * >   - `/proc/version`
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | File System - Read (`allow-read`) | `/proc/version` |
  * @returns {Promise<boolean>} Determine result.
  */
 export async function isEnvironmentWSL(): Promise<boolean> {
@@ -25,10 +26,11 @@ export default isEnvironmentWSL;
 /**
  * Determine whether this process is inside WSL (Windows Subsystem for Linux).
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - File System - Read (`allow-read`)
- * >   - `/proc/version`
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | File System - Read (`allow-read`) | `/proc/version` |
  * @returns {boolean} Determine result.
  */
 export function isEnvironmentWSLSync(): boolean {

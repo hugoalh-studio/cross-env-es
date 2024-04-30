@@ -3,10 +3,11 @@ import { stat as fsStat } from "node:fs/promises";
 /**
  * Determine whether this process is inside Podman.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - File System - Read (`allow-read`)
- * >   - `/run/.containerenv`
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | File System - Read (`allow-read`) | `/run/.containerenv` |
  * @returns {Promise<boolean>} Determine result.
  */
 export async function isEnvironmentPodman(): Promise<boolean> {
@@ -21,10 +22,11 @@ export default isEnvironmentPodman;
 /**
  * Determine whether this process is inside Podman.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - File System - Read (`allow-read`)
- * >   - `/run/.containerenv`
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | File System - Read (`allow-read`) | `/run/.containerenv` |
  * @returns {boolean} Determine result.
  */
 export function isEnvironmentPodmanSync(): boolean {

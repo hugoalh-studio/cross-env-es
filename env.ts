@@ -2,17 +2,21 @@ import process from "node:process";
 /**
  * Cross runtime environment variables interface.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | All |
  */
 export interface CrossEnv {
 	/**
 	 * Delete an environment variable.
 	 * 
-	 * > **🛡️ Require Permission**
+	 * > **🛡️ Permissions**
 	 * >
-	 * > - Environment Variable (`allow-env`)
+	 * > | **Target** | **Type** | **Coverage** |
+	 * > |:--|:--|:--|
+	 * > | Deno | Environment Variable (`allow-env`) | All |
 	 * @param {string} key Key of the environment variable.
 	 * @returns {void}
 	 */
@@ -20,9 +24,11 @@ export interface CrossEnv {
 	/**
 	 * Get the value of an environment variable.
 	 * 
-	 * > **🛡️ Require Permission**
+	 * > **🛡️ Permissions**
 	 * >
-	 * > - Environment Variable (`allow-env`)
+	 * > | **Target** | **Type** | **Coverage** |
+	 * > |:--|:--|:--|
+	 * > | Deno | Environment Variable (`allow-env`) | All |
 	 * @param {string} key Key of the environment variable.
 	 * @returns {string | undefined} Value of the environment variable.
 	 */
@@ -30,18 +36,22 @@ export interface CrossEnv {
 	/**
 	 * Get a snapshot of the environment variables at invocation as a simple object of keys and values.
 	 * 
-	 * > **🛡️ Require Permission**
+	 * > **🛡️ Permissions**
 	 * >
-	 * > - Environment Variable (`allow-env`)
+	 * > | **Target** | **Type** | **Coverage** |
+	 * > |:--|:--|:--|
+	 * > | Deno | Environment Variable (`allow-env`) | All |
 	 * @returns {{ [key: string]: string; }} A snapshot of the environment variables.
 	 */
 	getAll(): { [key: string]: string; };
 	/**
 	 * Check whether an environment variable is present.
 	 * 
-	 * > **🛡️ Require Permission**
+	 * > **🛡️ Permissions**
 	 * >
-	 * > - Environment Variable (`allow-env`)
+	 * > | **Target** | **Type** | **Coverage** |
+	 * > |:--|:--|:--|
+	 * > | Deno | Environment Variable (`allow-env`) | All |
 	 * @param {string} key Key of the environment variable.
 	 * @returns {boolean} Determine result.
 	 */
@@ -49,9 +59,11 @@ export interface CrossEnv {
 	/**
 	 * Set an environment variable.
 	 * 
-	 * > **🛡️ Require Permission**
+	 * > **🛡️ Permissions**
 	 * >
-	 * > - Environment Variable (`allow-env`)
+	 * > | **Target** | **Type** | **Coverage** |
+	 * > |:--|:--|:--|
+	 * > | Deno | Environment Variable (`allow-env`) | All |
 	 * @param {string} key Key of the environment variable.
 	 * @param {string} value Value of the environment variable.
 	 * @returns {void}
@@ -87,18 +99,22 @@ const envViaProcess: CrossEnv = {
 /**
  * Cross runtime environment variables interface.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | All |
  */
 export const env: CrossEnv = Object.freeze((typeof Deno === "undefined") ? envViaProcess : envViaDeno);
 export default env;
 /**
  * Delete an environment variable.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | All |
  * @param {string} key Key of the environment variable.
  * @returns {void}
  * @deprecated Replaced by method {@linkcode env.delete}.
@@ -109,9 +125,11 @@ export function deleteEnv(key: string): void {
 /**
  * Get a snapshot of the environment variables at invocation as a simple object of keys and values.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | All |
  * @returns {{ [key: string]: string; }} A snapshot of the environment variables.
  * @deprecated Replaced by method {@linkcode env.getAll}.
  */
@@ -121,9 +139,11 @@ export function getAllEnv(): { [key: string]: string; } {
 /**
  * Get the value of an environment variable.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | All |
  * @param {string} key Key of the environment variable.
  * @returns {string | undefined} Value of the environment variable.
  * @deprecated Replaced by method {@linkcode env.get}.
@@ -134,9 +154,11 @@ export function getEnv(key: string): string | undefined {
 /**
  * Check whether an environment variable is present.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | All |
  * @param {string} key Key of the environment variable.
  * @deprecated Replaced by method {@linkcode env.has}.
  * @returns {boolean} Determine result.
@@ -147,9 +169,11 @@ export function hasEnv(key: string): boolean {
 /**
  * Set an environment variable.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | All |
  * @param {string} key Key of the environment variable.
  * @param {string} value Value of the environment variable.
  * @returns {void}

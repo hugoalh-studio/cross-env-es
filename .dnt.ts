@@ -21,7 +21,10 @@ const transformResult: TransformOutput = await transform({
 		"path.ts",
 		"pathext.ts"
 	],
-	mappings: {},
+	mappings: {
+		"node:path": { name: "node:path" },
+		"node:process": { name: "node:process" }
+	},
 	shims: [],
 	target: "Latest"
 });

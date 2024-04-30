@@ -3,17 +3,21 @@ import env from "./env.ts";
 /**
  * Cross runtime environment variables delimitation interface.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | All |
  */
 export interface CrossEnvDelimitation {
 	/**
 	 * Get the value of an environment variable with inter-handle delimiter.
 	 * 
-	 * > **🛡️ Require Permission**
+	 * > **🛡️ Permissions**
 	 * >
-	 * > - Environment Variable (`allow-env`)
+	 * > | **Target** | **Type** | **Coverage** |
+	 * > |:--|:--|:--|
+	 * > | Deno | Environment Variable (`allow-env`) | All |
 	 * @param {string} key Key of the environment variable.
 	 * @returns {Set<string>} Values of the environment variable.
 	 */
@@ -21,9 +25,11 @@ export interface CrossEnvDelimitation {
 	/**
 	 * Set an environment variable with inter-handle delimiter.
 	 * 
-	 * > **🛡️ Require Permission**
+	 * > **🛡️ Permissions**
 	 * >
-	 * > - Environment Variable (`allow-env`)
+	 * > | **Target** | **Type** | **Coverage** |
+	 * > |:--|:--|:--|
+	 * > | Deno | Environment Variable (`allow-env`) | All |
 	 * @param {string} key Key of the environment variable.
 	 * @param {Set<string>} values Values of the environment variable.
 	 * @returns {void}
@@ -33,9 +39,11 @@ export interface CrossEnvDelimitation {
 /**
  * Cross runtime environment variables delimitation interface.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | All |
  */
 export const envDelimitation: CrossEnvDelimitation = Object.freeze({
 	get(key: string): Set<string> {

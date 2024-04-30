@@ -2,10 +2,11 @@ import env from "./env.ts";
 /**
  * Determine whether this process is inside [Hyper](https://hyper.is).
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
- * >   - `TERM_PROGRAM`
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | `TERM_PROGRAM` |
  * @returns {boolean} Determine result.
  */
 export function isEnvironmentHyper(): boolean {

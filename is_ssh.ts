@@ -2,10 +2,11 @@ import env from "./env.ts";
 /**
  * Determine whether this process is inside SSH.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
- * >   - `SSH_CLIENT`
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | `SSH_CLIENT` |
  * @returns {boolean} Determine result.
  */
 export function isEnvironmentSSH(): boolean {

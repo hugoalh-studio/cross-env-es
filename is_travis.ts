@@ -3,9 +3,11 @@ import { isEnvironmentCI } from "./is_ci.ts";
 /**
  * Determine whether this process is inside Travis.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | All |
  * @returns {boolean} Determine result.
  */
 export function isEnvironmentTravis(): boolean {

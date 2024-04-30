@@ -3,9 +3,11 @@ const regexpEnvFalsy = /^(?:0|false)$/i;
 /**
  * Determine whether this process is in CI (Continuous Integration) mode.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | All |
  * @returns {boolean} Determine result.
  */
 export function isEnvironmentCI(): boolean {

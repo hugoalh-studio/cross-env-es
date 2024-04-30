@@ -3,19 +3,21 @@ import { envDelimitation } from "./_delimitation.ts";
 /**
  * Cross runtime environment variables `PATH` interface.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
- * >   - `PATH`
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | `PATH` |
  */
 export interface CrossEnvPath {
 	/**
 	 * Add value to the environment variable `PATH`.
 	 * 
-	 * > **🛡️ Require Permission**
+	 * > **🛡️ Permissions**
 	 * >
-	 * > - Environment Variable (`allow-env`)
-	 * >   - `PATH`
+	 * > | **Target** | **Type** | **Coverage** |
+	 * > |:--|:--|:--|
+	 * > | Deno | Environment Variable (`allow-env`) | `PATH` |
 	 * @param {...string} values Value that need to add to the environment variable `PATH`.
 	 * @returns {void}
 	 */
@@ -23,10 +25,11 @@ export interface CrossEnvPath {
 	/**
 	 * Delete value from the environment variable `PATH`.
 	 * 
-	 * > **🛡️ Require Permission**
+	 * > **🛡️ Permissions**
 	 * >
-	 * > - Environment Variable (`allow-env`)
-	 * >   - `PATH`
+	 * > | **Target** | **Type** | **Coverage** |
+	 * > |:--|:--|:--|
+	 * > | Deno | Environment Variable (`allow-env`) | `PATH` |
 	 * @param {...string} values Value that need to delete from the environment variable `PATH`.
 	 * @returns {void}
 	 */
@@ -34,10 +37,11 @@ export interface CrossEnvPath {
 	/**
 	 * Get the values of the environment variable `PATH`.
 	 * 
-	 * > **🛡️ Require Permission**
+	 * > **🛡️ Permissions**
 	 * >
-	 * > - Environment Variable (`allow-env`)
-	 * >   - `PATH`
+	 * > | **Target** | **Type** | **Coverage** |
+	 * > |:--|:--|:--|
+	 * > | Deno | Environment Variable (`allow-env`) | `PATH` |
 	 * @returns {string[]} Values of the environment variable `PATH`.
 	 */
 	get(): string[];
@@ -45,10 +49,11 @@ export interface CrossEnvPath {
 /**
  * Cross runtime environment variables `PATH` interface.
  * 
- * > **🛡️ Require Permission**
+ * > **🛡️ Permissions**
  * >
- * > - Environment Variable (`allow-env`)
- * >   - `PATH`
+ * > | **Target** | **Type** | **Coverage** |
+ * > |:--|:--|:--|
+ * > | Deno | Environment Variable (`allow-env`) | `PATH` |
  */
 export const envPath: CrossEnvPath = Object.freeze({
 	add(...values: string[]): void {
