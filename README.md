@@ -77,7 +77,7 @@ An ES (JavaScript & TypeScript) module for cross runtime environment variables i
 |:--|:--|:--|
 | Deno | Environment Variable (`allow-env`) | All |
 
-## 🧩 API
+## 🧩 APIs
 
 - ```ts
   const env: CrossEnv;
@@ -146,7 +146,7 @@ An ES (JavaScript & TypeScript) module for cross runtime environment variables i
 > - [Deno CLI `deno doc`](https://deno.land/manual/tools/documentation_generator)
 > - [JSR](https://jsr.io/@hugoalh/cross-env)
 
-## ✍️ Example
+## ✍️ Examples
 
 - ```ts
   env.delete("SOME_VAR");
