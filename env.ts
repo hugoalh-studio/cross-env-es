@@ -160,8 +160,8 @@ export function getEnv(key: string): string | undefined {
  * > |:--|:--|:--|
  * > | Deno | Environment Variable (`allow-env`) | All |
  * @param {string} key Key of the environment variable.
- * @deprecated Replaced by method {@linkcode env.has}.
  * @returns {boolean} Determine result.
+ * @deprecated Replaced by method {@linkcode env.has}.
  */
 export function hasEnv(key: string): boolean {
 	return env.has(key);
