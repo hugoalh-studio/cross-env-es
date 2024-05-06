@@ -20,32 +20,18 @@ An ES (JavaScript & TypeScript) module for cross runtime environment variables i
 
 > **ℹ️ Note**
 >
-> It is possible to use this module in other ways which not listed in here, however it is not officially supported.
+> It is possible to use this module in other methods/ways which not listed in here, however it is not officially supported.
 
 ### #️⃣ Registries Identifier
 
-<table><tbody align="left">
-<tr>
-<th>JSR</th>
-<td width="100%">
-
-```
-@hugoalh/cross-env
-```
-
-</td>
-</tr>
-<tr>
-<th>NPM</th>
-<td width="100%">
-
-```
-@hugoalh/cross-env
-```
-
-</td>
-</tr>
-</tbody></table>
+- **JSR:**
+  ```
+  @hugoalh/cross-env
+  ```
+- **NPM:**
+  ```
+  @hugoalh/cross-env
+  ```
 
 > **ℹ️ Note**
 >
@@ -54,7 +40,7 @@ An ES (JavaScript & TypeScript) module for cross runtime environment variables i
 
 ### #️⃣ Remote Import Paths
 
-- Via GitHub Raw (Require Tag)
+- **GitHub Raw:** (Require Tag)
   ```
   https://raw.githubusercontent.com/hugoalh-studio/cross-env-es/${Tag}/mod.ts
   ```
