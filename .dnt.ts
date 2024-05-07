@@ -22,6 +22,8 @@ const transformResult: TransformOutput = await transform({
 		"pathext.ts"
 	],
 	mappings: {
+		"node:fs": { name: "node:fs" },
+		"node:fs/promises": { name: "node:fs/promises" },
 		"node:path": { name: "node:path" },
 		"node:process": { name: "node:process" }
 	},
