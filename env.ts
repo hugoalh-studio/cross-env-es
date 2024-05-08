@@ -117,7 +117,6 @@ export default env;
  * > | Deno | Environment Variable (`allow-env`) | All |
  * @param {string} key Key of the environment variable.
  * @returns {void}
- * @deprecated Replaced by method {@linkcode env.delete}.
  */
 export function deleteEnv(key: string): void {
 	return env.delete(key);
@@ -131,7 +130,6 @@ export function deleteEnv(key: string): void {
  * > |:--|:--|:--|
  * > | Deno | Environment Variable (`allow-env`) | All |
  * @returns {{ [key: string]: string; }} A snapshot of the environment variables.
- * @deprecated Replaced by method {@linkcode env.getAll}.
  */
 export function getAllEnv(): { [key: string]: string; } {
 	return env.getAll();
@@ -146,7 +144,6 @@ export function getAllEnv(): { [key: string]: string; } {
  * > | Deno | Environment Variable (`allow-env`) | All |
  * @param {string} key Key of the environment variable.
  * @returns {string | undefined} Value of the environment variable.
- * @deprecated Replaced by method {@linkcode env.get}.
  */
 export function getEnv(key: string): string | undefined {
 	return env.get(key);
@@ -161,7 +158,6 @@ export function getEnv(key: string): string | undefined {
  * > | Deno | Environment Variable (`allow-env`) | All |
  * @param {string} key Key of the environment variable.
  * @returns {boolean} Determine result.
- * @deprecated Replaced by method {@linkcode env.has}.
  */
 export function hasEnv(key: string): boolean {
 	return env.has(key);
@@ -177,7 +173,6 @@ export function hasEnv(key: string): boolean {
  * @param {string} key Key of the environment variable.
  * @param {string} value Value of the environment variable.
  * @returns {void}
- * @deprecated Replaced by method {@linkcode env.set}.
  */
 export function setEnv(key: string, value: string): void {
 	return env.set(key, value);

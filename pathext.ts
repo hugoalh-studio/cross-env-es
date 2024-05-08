@@ -1,6 +1,9 @@
 import process from "node:process";
 import { envDelimitation } from "./_delimitation.ts";
-const isOSWindows: boolean = process.platform === "win32";
+const isOSWindows: boolean = (
+	(typeof Deno !== "undefined" && Deno.build.os === "windows") ||
+	process.platform === "win32"
+);
 /**
  * Cross runtime environment variables `PATHEXT` interface.
  * 

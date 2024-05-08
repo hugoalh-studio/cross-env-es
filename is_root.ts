@@ -10,6 +10,9 @@ import process from "node:process";
  * @returns {boolean} Determine result.
  */
 export function isEnvironmentRoot(): boolean {
-	return (process.getuid?.() === 0);
+	return (
+		(typeof Deno !== "undefined" && Deno.uid() === 0) ||
+		process.getuid?.() === 0
+	);
 }
 export default isEnvironmentRoot;

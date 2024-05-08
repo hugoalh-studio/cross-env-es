@@ -13,7 +13,10 @@ const regexpWordMicrosoft = /microsoft/i;
  * @returns {Promise<boolean>} Determine result.
  */
 export async function isEnvironmentWSL(): Promise<boolean> {
-	if (process.platform !== "linux") {
+	if (
+		(typeof Deno !== "undefined" && Deno.build.os !== "linux") ||
+		process.platform !== "linux"
+	) {
 		return false;
 	}
 	try {
@@ -34,7 +37,10 @@ export default isEnvironmentWSL;
  * @returns {boolean} Determine result.
  */
 export function isEnvironmentWSLSync(): boolean {
-	if (process.platform !== "linux") {
+	if (
+		(typeof Deno !== "undefined" && Deno.build.os !== "linux") ||
+		process.platform !== "linux"
+	) {
 		return false;
 	}
 	try {
