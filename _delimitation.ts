@@ -47,7 +47,9 @@ export interface CrossEnvDelimitation {
  */
 export const envDelimitation: CrossEnvDelimitation = Object.freeze({
 	get(key: string): Set<string> {
-		return new Set<string>((env.get(key) ?? "").split(pathDelimiter));
+		return new Set<string>((env.get(key) ?? "").split(pathDelimiter).filter((value: string): boolean => {
+			return (value.length > 0);
+		}));
 	},
 	set(key: string, values: Set<string>): void {
 		return env.set(key, Array.from(values.values()).join(pathDelimiter));
