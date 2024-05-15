@@ -6,7 +6,7 @@ import process from "node:process";
  * >
  * > | **Target** | **Type** | **Coverage** |
  * > |:--|:--|:--|
- * > | Deno | Environment Variable (`allow-env`) | All |
+ * > | Deno | Environment Variable (`allow-env`) | Resource |
  */
 export interface CrossEnv {
 	/**
@@ -16,7 +16,7 @@ export interface CrossEnv {
 	 * >
 	 * > | **Target** | **Type** | **Coverage** |
 	 * > |:--|:--|:--|
-	 * > | Deno | Environment Variable (`allow-env`) | All |
+	 * > | Deno | Environment Variable (`allow-env`) | Resource |
 	 * @param {string} key Key of the environment variable.
 	 * @returns {void}
 	 */
@@ -28,7 +28,7 @@ export interface CrossEnv {
 	 * >
 	 * > | **Target** | **Type** | **Coverage** |
 	 * > |:--|:--|:--|
-	 * > | Deno | Environment Variable (`allow-env`) | All |
+	 * > | Deno | Environment Variable (`allow-env`) | Resource |
 	 * @param {string} key Key of the environment variable.
 	 * @returns {string | undefined} Value of the environment variable.
 	 */
@@ -51,7 +51,7 @@ export interface CrossEnv {
 	 * >
 	 * > | **Target** | **Type** | **Coverage** |
 	 * > |:--|:--|:--|
-	 * > | Deno | Environment Variable (`allow-env`) | All |
+	 * > | Deno | Environment Variable (`allow-env`) | Resource |
 	 * @param {string} key Key of the environment variable.
 	 * @returns {boolean} Determine result.
 	 */
@@ -63,7 +63,7 @@ export interface CrossEnv {
 	 * >
 	 * > | **Target** | **Type** | **Coverage** |
 	 * > |:--|:--|:--|
-	 * > | Deno | Environment Variable (`allow-env`) | All |
+	 * > | Deno | Environment Variable (`allow-env`) | Resource |
 	 * @param {string} key Key of the environment variable.
 	 * @param {string} value Value of the environment variable.
 	 * @returns {void}
@@ -103,7 +103,7 @@ const envViaProcess: CrossEnv = {
  * >
  * > | **Target** | **Type** | **Coverage** |
  * > |:--|:--|:--|
- * > | Deno | Environment Variable (`allow-env`) | All |
+ * > | Deno | Environment Variable (`allow-env`) | Resource |
  */
 export const env: CrossEnv = Object.freeze((typeof Deno === "undefined") ? envViaProcess : envViaDeno);
 export default env;
@@ -114,7 +114,7 @@ export default env;
  * >
  * > | **Target** | **Type** | **Coverage** |
  * > |:--|:--|:--|
- * > | Deno | Environment Variable (`allow-env`) | All |
+ * > | Deno | Environment Variable (`allow-env`) | Resource |
  * @param {string} key Key of the environment variable.
  * @returns {void}
  */
@@ -141,7 +141,7 @@ export function getAllEnv(): { [key: string]: string; } {
  * >
  * > | **Target** | **Type** | **Coverage** |
  * > |:--|:--|:--|
- * > | Deno | Environment Variable (`allow-env`) | All |
+ * > | Deno | Environment Variable (`allow-env`) | Resource |
  * @param {string} key Key of the environment variable.
  * @returns {string | undefined} Value of the environment variable.
  */
@@ -155,7 +155,7 @@ export function getEnv(key: string): string | undefined {
  * >
  * > | **Target** | **Type** | **Coverage** |
  * > |:--|:--|:--|
- * > | Deno | Environment Variable (`allow-env`) | All |
+ * > | Deno | Environment Variable (`allow-env`) | Resource |
  * @param {string} key Key of the environment variable.
  * @returns {boolean} Determine result.
  */
@@ -169,7 +169,7 @@ export function hasEnv(key: string): boolean {
  * >
  * > | **Target** | **Type** | **Coverage** |
  * > |:--|:--|:--|
- * > | Deno | Environment Variable (`allow-env`) | All |
+ * > | Deno | Environment Variable (`allow-env`) | Resource |
  * @param {string} key Key of the environment variable.
  * @param {string} value Value of the environment variable.
  * @returns {void}
