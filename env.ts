@@ -70,14 +70,14 @@ export interface CrossEnv {
 	 */
 	set(key: string, value: string): void;
 }
-const envViaDeno: CrossEnv = {
+const envViaDeno: CrossEnv = Object.freeze({
 	delete: Deno.env.delete,
 	get: Deno.env.get,
 	getAll: Deno.env.toObject,
 	has: Deno.env.has,
 	set: Deno.env.set
-};
-const envViaProcess: CrossEnv = {
+});
+const envViaProcess: CrossEnv = Object.freeze({
 	delete(key: string): void {
 		process.env[key] = undefined;
 	},
@@ -95,7 +95,7 @@ const envViaProcess: CrossEnv = {
 	set(key: string, value: string): void {
 		process.env[key] = value;
 	}
-};
+});
 /**
  * Cross runtime environment variables interface.
  * 
@@ -105,7 +105,7 @@ const envViaProcess: CrossEnv = {
  * > |:--|:--|:--|
  * > | Deno | Environment Variable (`allow-env`) | Resource |
  */
-export const env: CrossEnv = Object.freeze((typeof Deno === "undefined") ? envViaProcess : envViaDeno);
+export const env: CrossEnv = (typeof Deno === "undefined") ? envViaProcess : envViaDeno;
 export default env;
 /**
  * Delete an environment variable.
