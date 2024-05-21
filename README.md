@@ -3,7 +3,7 @@
 [**⚖️** MIT](./LICENSE.md)
 
 [![GitHub: hugoalh-studio/cross-env-es](https://img.shields.io/github/v/release/hugoalh-studio/cross-env-es?label=hugoalh-studio/cross-env-es&labelColor=181717&logo=github&logoColor=ffffff&sort=semver&style=flat "GitHub: hugoalh-studio/cross-env-es")](https://github.com/hugoalh-studio/cross-env-es)
-[![JSR: @hugoalh/cross-env](https://img.shields.io/jsr/v/@hugoalh/cross-env?label=JSR%20@hugoalh/cross-env&labelColor=F7DF1E&logoColor=000000&style=flat "JSR: @hugoalh/cross-env")](https://jsr.io/@hugoalh/cross-env)
+[![JSR: @hugoalh/cross-env](https://img.shields.io/jsr/v/@hugoalh/cross-env?label=@hugoalh/cross-env&labelColor=F7DF1E&logo=jsr&logoColor=000000&style=flat "JSR: @hugoalh/cross-env")](https://jsr.io/@hugoalh/cross-env)
 [![NPM: @hugoalh/cross-env](https://img.shields.io/npm/v/@hugoalh/cross-env?label=@hugoalh/cross-env&labelColor=CB3837&logo=npm&logoColor=ffffff&style=flat "NPM: @hugoalh/cross-env")](https://www.npmjs.com/package/@hugoalh/cross-env)
 
 An ES (JavaScript & TypeScript) module for cross runtime environment variables interface.
